@@ -1,0 +1,140 @@
+name: Update levels data
+
+on:
+  workflow_dispatch:
+    inputs:
+      refresh_url:
+        description: "Optional explicit levels_data.json URL for the Wikidot refresh button"
+        required: false
+        default: ""
+      wikidot_width:
+        description: "Wikidot viewer width"
+        required: false
+        default: "1280px"
+  schedule:
+    # 03:17 JST every day.
+    - cron: "17 18 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-levels.yml"
+      - "build_viewer.py"
+      - "requirements.txt"
+      - "scraper.py"
+
+permissions:
+  contents: write
+  id-token: write
+  pages: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Resolve public URLs
+        run: |
+          repo_name="${GITHUB_REPOSITORY#*/}"
+          if [ "$repo_name" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
+            pages_base="https://${GITHUB_REPOSITORY_OWNER}.github.io"
+          else
+            pages_base="https://${GITHUB_REPOSITORY_OWNER}.github.io/${repo_name}"
+          fi
+
+          refresh_url="${{ github.event.inputs.refresh_url }}"
+          if [ -z "$refresh_url" ]; then
+            refresh_url="${pages_base}/levels_data.json"
+          fi
+
+          wikidot_width="${{ github.event.inputs.wikidot_width }}"
+          if [ -z "$wikidot_width" ]; then
+            wikidot_width="1280px"
+          fi
+
+          echo "PAGES_BASE=${pages_base}" >> "$GITHUB_ENV"
+          echo "REFRESH_URL=${refresh_url}" >> "$GITHUB_ENV"
+          echo "WIKIDOT_WIDTH=${wikidot_width}" >> "$GITHUB_ENV"
+
+      - name: Scrape and build viewer
+        run: |
+          python scraper.py --build \
+            --refresh-url "$REFRESH_URL" \
+            --wikidot-width "$WIKIDOT_WIDTH"
+
+      - name: Validate generated data
+        run: |
+          python - <<'PY'
+          import json
+
+          with open("levels_data.json", encoding="utf-8") as f:
+              data = json.load(f)
+
+          levels = data.get("levels") or []
+          missing_author = [e for e in levels if not e.get("author")]
+          missing_image = [e for e in levels if not e.get("first_image")]
+
+          print(f"levels: {len(levels)}")
+          print(f"missing author: {len(missing_author)}")
+          print(f"missing image: {len(missing_image)}")
+
+          if len(levels) == 0:
+              raise SystemExit("No levels were scraped.")
+          if len(missing_author) > 0:
+              raise SystemExit("Some levels are missing authors.")
+          if len(missing_image) > 0:
+              raise SystemExit("Some levels are missing images.")
+          PY
+
+      - name: Prepare GitHub Pages artifact
+        run: |
+          mkdir -p site
+          cp levels_data.json site/levels_data.json
+          cp levels_viewer.html site/levels_viewer.html
+          cp levels_viewer.html site/index.html
+          cp wikidot_page.txt site/wikidot_page.txt
+          touch site/.nojekyll
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add levels_data.json levels_viewer.html wikidot_page.txt
+
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Update levels data"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
