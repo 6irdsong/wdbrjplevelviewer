@@ -2,15 +2,6 @@ name: Update levels data
 
 on:
   workflow_dispatch:
-    inputs:
-      refresh_url:
-        description: "Optional explicit levels_data.json URL for the Wikidot refresh button"
-        required: false
-        default: ""
-      wikidot_width:
-        description: "Wikidot viewer width"
-        required: false
-        default: "1280px"
   schedule:
     # 03:17 JST every day.
     - cron: "17 18 * * *"
@@ -52,34 +43,8 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Resolve public URLs
-        run: |
-          repo_name="${GITHUB_REPOSITORY#*/}"
-          if [ "$repo_name" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
-            pages_base="https://${GITHUB_REPOSITORY_OWNER}.github.io"
-          else
-            pages_base="https://${GITHUB_REPOSITORY_OWNER}.github.io/${repo_name}"
-          fi
-
-          refresh_url="${{ github.event.inputs.refresh_url }}"
-          if [ -z "$refresh_url" ]; then
-            refresh_url="${pages_base}/levels_data.json"
-          fi
-
-          wikidot_width="${{ github.event.inputs.wikidot_width }}"
-          if [ -z "$wikidot_width" ]; then
-            wikidot_width="1280px"
-          fi
-
-          echo "PAGES_BASE=${pages_base}" >> "$GITHUB_ENV"
-          echo "REFRESH_URL=${refresh_url}" >> "$GITHUB_ENV"
-          echo "WIKIDOT_WIDTH=${wikidot_width}" >> "$GITHUB_ENV"
-
       - name: Scrape and build viewer
-        run: |
-          python scraper.py --build \
-            --refresh-url "$REFRESH_URL" \
-            --wikidot-width "$WIKIDOT_WIDTH"
+        run: python scraper.py --build
 
       - name: Validate generated data
         run: |

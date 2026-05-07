@@ -10,7 +10,6 @@ Backrooms JP Wiki Level Scraper
 
 import argparse
 import asyncio
-import hashlib
 import json
 import re
 from datetime import datetime, timezone
@@ -23,6 +22,7 @@ from bs4 import BeautifulSoup
 BASE_URL = "http://japan-backrooms-wiki.wikidot.com"
 AJAX_URL = f"{BASE_URL}/ajax-module-connector.php"
 MAIN_LEVELS_PATH = "normal-levels-i"
+SUB_LEVELS_PATH = "sub-levels"
 DEFAULT_OUTPUT = "levels_data.json"
 CONCURRENCY = 5
 DELAY = 0.3
@@ -59,16 +59,6 @@ def parse_args():
         default="wikidot_page.txt",
         help="Wikidot source output path used with --build.",
     )
-    parser.add_argument(
-        "--refresh-url",
-        default="",
-        help="Optional levels_data.json URL used by the in-page update button.",
-    )
-    parser.add_argument(
-        "--wikidot-width",
-        default="1280px",
-        help="Wikidot wrapper width used with --build.",
-    )
     return parser.parse_args()
 
 
@@ -81,6 +71,22 @@ def normalize_path(href):
     """Normalize a Wikidot link href to a path without query or fragment."""
     parsed = urlparse(href)
     return parsed.path.lstrip('/')
+
+
+def extract_subtitle_after_link(link):
+    """Concatenate inner HTML after a level link until <br>; only trim a leading dash."""
+    parts = []
+    node = link.next_sibling
+    while node:
+        if getattr(node, 'name', None) == 'br':
+            break
+        parts.append(str(node))
+        node = node.next_sibling
+
+    text = ''.join(parts).strip()
+    if text.startswith('-'):
+        text = text[1:].lstrip()
+    return text or None
 
 
 def extract_levels_from_list_html(html):
@@ -110,11 +116,48 @@ def extract_levels_from_list_html(html):
 
         levels[num] = {
             'num': num,
+            'parent_num': num,
+            'sub_num': 0,
+            'is_sub': False,
             'name': text if text else level_name(num),
             'slug': slug,
+            'subtitle': extract_subtitle_after_link(link),
         }
 
     return [levels[num] for num in sorted(levels)]
+
+
+def extract_sub_levels_from_list_html(html):
+    """Extract sub-level links (slug pattern: level-X-Y-n) from the sub-levels list page."""
+    soup = BeautifulSoup(html, 'html.parser')
+    content_div = soup.find('div', id='page-content') or soup
+    levels = {}
+
+    for link in content_div.find_all('a', href=True):
+        if 'newpage' in (link.get('class') or []):
+            continue
+
+        slug = normalize_path(link['href'])
+        m = re.fullmatch(r'level-(\d+)-(\d+)-n', slug)
+        if not m:
+            continue
+
+        parent_num = int(m.group(1))
+        sub_num = int(m.group(2))
+        display_num = f"{parent_num}.{sub_num}"
+        text = link.get_text(' ', strip=True)
+
+        levels[(parent_num, sub_num)] = {
+            'num': display_num,
+            'parent_num': parent_num,
+            'sub_num': sub_num,
+            'is_sub': True,
+            'name': text if text else f"Level {display_num} N",
+            'slug': slug,
+            'subtitle': extract_subtitle_after_link(link),
+        }
+
+    return list(levels.values())
 
 
 def extract_page_id(html):
@@ -165,14 +208,13 @@ def parse_revision_history(body):
     return oldest[2], dt.strftime('%Y-%m-%d %H:%M:%S UTC'), ts
 
 
-async def fetch_main_level_list(session):
-    """Fetch the normal levels list page once and return HTML plus hash."""
-    url = f"{BASE_URL}/{MAIN_LEVELS_PATH}"
+async def fetch_level_list(session, path):
+    """Fetch a level list page (normal or sub) and return HTML."""
+    url = f"{BASE_URL}/{path}"
     async with session.get(url, timeout=aiohttp.ClientTimeout(total=30)) as resp:
         if resp.status != 200:
             raise RuntimeError(f"Failed to fetch {url}: HTTP {resp.status}")
-        html = await resp.text()
-    return html, hashlib.sha256(html.encode()).hexdigest()
+        return await resp.text()
 
 
 async def get_token(session):
@@ -255,13 +297,24 @@ async def main():
         headers=default_headers,
         cookie_jar=jar,
     ) as session:
-        print(f"Fetching source list: {BASE_URL}/{MAIN_LEVELS_PATH}")
-        main_html, main_hash = await fetch_main_level_list(session)
-        slugs = extract_levels_from_list_html(main_html)
+        print(f"Fetching normal levels list: {BASE_URL}/{MAIN_LEVELS_PATH}")
+        main_html = await fetch_level_list(session, MAIN_LEVELS_PATH)
+        normal_slugs = extract_levels_from_list_html(main_html)
+        if not normal_slugs:
+            raise RuntimeError("No normal levels were found on the source list page.")
+        print(f"  Normal levels: {len(normal_slugs)}")
+
+        print(f"Fetching sub-levels list: {BASE_URL}/{SUB_LEVELS_PATH}")
+        sub_html = await fetch_level_list(session, SUB_LEVELS_PATH)
+        sub_slugs = extract_sub_levels_from_list_html(sub_html)
+        print(f"  Sub-levels: {len(sub_slugs)}")
+
+        slugs = sorted(
+            normal_slugs + sub_slugs,
+            key=lambda s: (s['parent_num'], s['sub_num']),
+        )
         total = len(slugs)
-        if not slugs:
-            raise RuntimeError("No levels were found on the source list page.")
-        print(f"Found {total} levels on the source list page.")
+        print(f"Total to fetch: {total}")
 
         token = await get_token(session)
         if not token:
@@ -325,9 +378,13 @@ async def main():
         combined.append({
             'level_num': s['num'],
             'level_name': s['name'],
+            'is_sub': s.get('is_sub', False),
+            'parent_num': s['parent_num'],
+            'sub_num': s['sub_num'],
             'slug': slug,
             'url': f"{BASE_URL}/{slug}",
             'title': pd.get('title'),
+            'subtitle': s.get('subtitle'),
             'author': hd.get('author'),
             'created_at': hd.get('created_at'),
             'created_ts': hd.get('created_ts'),
@@ -335,10 +392,11 @@ async def main():
         })
 
     output = {
-        'scraped_at': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
         'total_levels': len(combined),
-        'source_list_url': f"{BASE_URL}/{MAIN_LEVELS_PATH}",
-        'main_page_hash': main_hash,
+        'source_list_urls': [
+            f"{BASE_URL}/{MAIN_LEVELS_PATH}",
+            f"{BASE_URL}/{SUB_LEVELS_PATH}",
+        ],
         'levels': combined,
     }
 
@@ -363,8 +421,6 @@ async def main():
             outpath,
             Path(args.html_output),
             Path(args.wikidot_output),
-            args.refresh_url,
-            args.wikidot_width,
         )
 
 
