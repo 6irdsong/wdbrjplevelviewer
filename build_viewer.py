@@ -56,6 +56,7 @@ STYLE = r"""
 .lv-card {
   display: flex;
   flex-direction: column;
+  min-height: 300px;
   padding: 0;
   background: transparent;
   color: inherit;
