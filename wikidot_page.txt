@@ -91,7 +91,7 @@
 }
 
 .lv-card.is-sub .lv-card-body {
-  padding: 0.3rem 0.85rem;
+  padding: 0.3rem 1rem 0.8rem;
 }
 
 .lv-card-title {
