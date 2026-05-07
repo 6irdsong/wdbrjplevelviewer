@@ -105,7 +105,7 @@ STYLE = r"""
 }
 
 .lv-card.is-sub .lv-card-body {
-  padding: 0.3rem 1rem 0.8rem;
+  padding: 0.1rem 1rem 0.8rem;
 }
 
 .lv-card-title {
@@ -115,6 +115,11 @@ STYLE = r"""
   font-size: 1.05rem;
   font-weight: 500;
   word-break: break-word;
+  min-height: calc(1.05rem * 1.6 * 2 + 0.5em);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .lv-card-title a {
