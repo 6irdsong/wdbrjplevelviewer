@@ -2569,6 +2569,22 @@ Level 133.1
 [[/div]]
 
 [[div class="lv-card"]]
+[[image http://japan-backrooms-storage.wikidot.com/local--files/file:9069711-145-u9dz/%E5%A1%9E%E3%81%8E%E3%81%93%E3%82%80%E6%B0%B4%E8%B7%AF_%E5%A7%8B%E7%82%B9 class="lv-card-img"]]
+[[div class="lv-card-body"]]
+[[div class="lv-card-level"]]
+Level 137
+[[/div]]
+[[div class="lv-card-title"]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-137-n" target="_blank"]]"つぎはぎ水路"[[/a]]
+[[/div]]
+[[div class="lv-card-meta"]]
+[[span class="lv-card-author"]]Hori ta[[/span]]
+[[span class="lv-card-date"]]2026-05-08[[/span]]
+[[/div]]
+[[/div]]
+[[/div]]
+
+[[div class="lv-card"]]
 [[image http://japan-backrooms-storage.wikidot.com/local--files/file:8577003-14-l5x7/Air_sumwint class="lv-card-img"]]
 [[div class="lv-card-body"]]
 [[div class="lv-card-level"]]
