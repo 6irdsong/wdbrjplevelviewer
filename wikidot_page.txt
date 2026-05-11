@@ -2303,7 +2303,7 @@ Level 110
 Level 111
 [[/div]]
 [[div class="lv-card-title"]]
-[[a href="http://japan-backrooms-wiki.wikidot.com/level-111-n" target="_blank"]][[span style="color: #bfbfbf"]][[[span style="white-space: pre-wrap;"]]...[[/span]]][[/span]][[/a]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-111-n" target="_blank"]]"潮騒の廃教室"[[/a]]
 [[/div]]
 [[div class="lv-card-meta"]]
 [[span class="lv-card-author"]]Miya_0503[[/span]]
