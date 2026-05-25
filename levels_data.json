@@ -1,5 +1,5 @@
 {
-  "total_levels": 336,
+  "total_levels": 337,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -3709,6 +3709,21 @@
       "created_at": "2022-11-11 10:50:54 UTC",
       "created_ts": 1668163854,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:2577572-5-xcdt/Akairo.jpg"
+    },
+    {
+      "level_num": 459,
+      "level_name": "Level 459 N",
+      "is_sub": false,
+      "parent_num": 459,
+      "sub_num": 0,
+      "slug": "level-459-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-459-n",
+      "title": "Level 459 N",
+      "subtitle": "\"収束廊\"",
+      "author": "ka7zdu2",
+      "created_at": "2026-05-25 04:24:53 UTC",
+      "created_ts": 1779683093,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:9871575-14-n3lz/Empty_hallway%2C_Katzen_Art_Museum%20%281%29.jpg"
     },
     {
       "level_num": 474,

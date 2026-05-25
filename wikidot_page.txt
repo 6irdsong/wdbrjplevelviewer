@@ -4121,6 +4121,22 @@ Level 444
 [[/div]]
 
 [[div class="lv-card"]]
+[[image http://japan-backrooms-storage.wikidot.com/local--files/file:9871575-14-n3lz/Empty_hallway%2C_Katzen_Art_Museum%20%281%29.jpg class="lv-card-img"]]
+[[div class="lv-card-body"]]
+[[div class="lv-card-level"]]
+Level 459
+[[/div]]
+[[div class="lv-card-title"]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-459-n" target="_blank"]]"収束廊"[[/a]]
+[[/div]]
+[[div class="lv-card-meta"]]
+[[span class="lv-card-author"]]ka7zdu2[[/span]]
+[[span class="lv-card-date"]]2026-05-25[[/span]]
+[[/div]]
+[[/div]]
+[[/div]]
+
+[[div class="lv-card"]]
 [[image http://japan-backrooms-storage.wikidot.com/local--files/file:8643739-2-wn9m/Level%20489%20N-promenade class="lv-card-img"]]
 [[div class="lv-card-body"]]
 [[div class="lv-card-level"]]
