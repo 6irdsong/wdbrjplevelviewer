@@ -1,5 +1,5 @@
 {
-  "total_levels": 337,
+  "total_levels": 338,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -4819,6 +4819,21 @@
       "created_at": "2025-10-15 12:00:07 UTC",
       "created_ts": 1760529607,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:9069711-59-fanq/%E5%BB%83%E5%A2%9F_%E5%A4%A7%E5%BA%83%E9%96%93"
+    },
+    {
+      "level_num": 900,
+      "level_name": "Level 900 N",
+      "is_sub": false,
+      "parent_num": 900,
+      "sub_num": 0,
+      "slug": "level-900-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-900-n",
+      "title": "Level 900 N",
+      "subtitle": "\"<span class=\"ruby\">Jury Duty<span class=\"rt\">陪審員義務</span></span>\"",
+      "author": "Nyropp",
+      "created_at": "2026-05-30 18:45:47 UTC",
+      "created_ts": 1780166747,
+      "first_image": "https://japan-backrooms-storage.wdfiles.com/local--files/file%3A8875524-17-rz96/downstairs1"
     },
     {
       "level_num": 904,
