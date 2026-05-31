@@ -1,5 +1,5 @@
 {
-  "total_levels": 338,
+  "total_levels": 340,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -1641,6 +1641,21 @@
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:2769355-6-4xmi/%E3%82%B4%E3%83%9F%E5%B1%8B%E6%95%B7"
     },
     {
+      "level_num": 85,
+      "level_name": "Level 85 N",
+      "is_sub": false,
+      "parent_num": 85,
+      "sub_num": 0,
+      "slug": "level-85-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-85-n",
+      "title": "Level 85 N",
+      "subtitle": "\"くぐもったネオン街\"",
+      "author": "Hori ta",
+      "created_at": "2026-05-31 16:23:10 UTC",
+      "created_ts": 1780244590,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:9069711-149-956l/%E3%81%8F%E3%81%90%E3%82%82%E3%81%A3%E3%81%9F%E3%83%8D%E3%82%AA%E3%83%B3%E8%A1%97"
+    },
+    {
       "level_num": 86,
       "level_name": "Level 86 N",
       "is_sub": false,
@@ -1954,6 +1969,21 @@
       "created_at": "2024-02-29 05:47:27 UTC",
       "created_ts": 1709185647,
       "first_image": "https://japan-backrooms-storage.wdfiles.com/local--files/file%3A6251290-17-8v4f/2937084101_24e7e63105_o.jpg"
+    },
+    {
+      "level_num": 107,
+      "level_name": "Level 107 N",
+      "is_sub": false,
+      "parent_num": 107,
+      "sub_num": 0,
+      "slug": "level-107-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-107-n",
+      "title": "Level 107 N",
+      "subtitle": "<span style=\"color: #bfbfbf\">[<span style=\"white-space: pre-wrap;\">...</span>]</span>",
+      "author": "Nuko_kami",
+      "created_at": "2026-05-31 02:54:29 UTC",
+      "created_ts": 1780196069,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:9590982-26-tkew/37046117681_75a2eeb5c1_h.jpg"
     },
     {
       "level_num": 109,
