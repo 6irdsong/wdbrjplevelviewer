@@ -2271,7 +2271,7 @@ Level 106
 Level 107
 [[/div]]
 [[div class="lv-card-title"]]
-[[a href="http://japan-backrooms-wiki.wikidot.com/level-107-n" target="_blank"]][[span style="color: #bfbfbf"]][[[span style="white-space: pre-wrap;"]]...[[/span]]][[/span]][[/a]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-107-n" target="_blank"]]"止"[[/a]]
 [[/div]]
 [[div class="lv-card-meta"]]
 [[span class="lv-card-author"]]Nuko_kami[[/span]]
