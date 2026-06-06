@@ -1,5 +1,5 @@
 {
-  "total_levels": 340,
+  "total_levels": 341,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -34,6 +34,21 @@
       "created_at": "2023-02-15 11:48:47 UTC",
       "created_ts": 1676461727,
       "first_image": "http://japan-backrooms-storage.wdfiles.com/local--files/file:2577572-10-htk2/Level0.1.png"
+    },
+    {
+      "level_num": "0.32",
+      "level_name": "Level 0.32 N",
+      "is_sub": true,
+      "parent_num": 0,
+      "sub_num": 32,
+      "slug": "level-0-32-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-0-32-n",
+      "title": "Level 0.32 N",
+      "subtitle": "\"テレビジョン・ルーム\"",
+      "author": "ka7zdu2",
+      "created_at": "2026-06-06 13:04:58 UTC",
+      "created_ts": 1780751098,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:9871575-3-nzz2/2257127921_25e2f092fe_o.jpg"
     },
     {
       "level_num": 1,

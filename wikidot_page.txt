@@ -200,6 +200,22 @@ Level 0.1
 [[/div]]
 [[/div]]
 
+[[div class="lv-card is-sub"]]
+[[image http://japan-backrooms-storage.wikidot.com/local--files/file:9871575-3-nzz2/2257127921_25e2f092fe_o.jpg class="lv-card-img"]]
+[[div class="lv-card-body"]]
+[[div class="lv-card-level is-sub"]]
+Level 0.32
+[[/div]]
+[[div class="lv-card-title"]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-0-32-n" target="_blank"]]"テレビジョン・ルーム"[[/a]]
+[[/div]]
+[[div class="lv-card-meta"]]
+[[span class="lv-card-author"]]ka7zdu2[[/span]]
+[[span class="lv-card-date"]]2026-06-06[[/span]]
+[[/div]]
+[[/div]]
+[[/div]]
+
 [[div class="lv-card"]]
 [[image http://japan-backrooms-storage.wikidot.com/local--files/file:6448496-2-mdhk/Level_1_N_small.jpg class="lv-card-img"]]
 [[div class="lv-card-body"]]
