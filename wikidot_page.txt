@@ -5113,6 +5113,22 @@ Level 794
 [[/div]]
 
 [[div class="lv-card"]]
+[[image http://japan-backrooms-storage.wikidot.com/local--files/file:10258528-12-y7t4/IMG_20240504_093145.jpg class="lv-card-img"]]
+[[div class="lv-card-body"]]
+[[div class="lv-card-level"]]
+Level 799
+[[/div]]
+[[div class="lv-card-title"]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-799-n" target="_blank"]]"晴れ林"[[/a]]
+[[/div]]
+[[div class="lv-card-meta"]]
+[[span class="lv-card-author"]]Ina Nobu[[/span]]
+[[span class="lv-card-date"]]2026-06-17[[/span]]
+[[/div]]
+[[/div]]
+[[/div]]
+
+[[div class="lv-card"]]
 [[image http://japan-backrooms-storage.wikidot.com/local--files/file:8735181-4-jlif/49784172878_a336b28839_k.jpg class="lv-card-img"]]
 [[div class="lv-card-body"]]
 [[div class="lv-card-level"]]

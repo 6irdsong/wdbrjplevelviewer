@@ -1,5 +1,5 @@
 {
-  "total_levels": 342,
+  "total_levels": 343,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -4639,6 +4639,21 @@
       "created_at": "2022-11-06 02:30:29 UTC",
       "created_ts": 1667701829,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:6448496-6-uluf/level_794_n.jpg"
+    },
+    {
+      "level_num": 799,
+      "level_name": "Level 799 N",
+      "is_sub": false,
+      "parent_num": 799,
+      "sub_num": 0,
+      "slug": "level-799-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-799-n",
+      "title": "Level 799 N",
+      "subtitle": "\"晴れ林\"",
+      "author": "Ina Nobu",
+      "created_at": "2026-06-17 07:31:18 UTC",
+      "created_ts": 1781681478,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:10258528-12-y7t4/IMG_20240504_093145.jpg"
     },
     {
       "level_num": 800,
