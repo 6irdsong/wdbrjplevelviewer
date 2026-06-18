@@ -2297,6 +2297,22 @@ Level 107
 [[/div]]
 
 [[div class="lv-card"]]
+[[image http://japan-backrooms-storage.wikidot.com/local--files/file:9590982-27-caln/4501050101_c12f089ab2_h.jpg class="lv-card-img"]]
+[[div class="lv-card-body"]]
+[[div class="lv-card-level"]]
+Level 108
+[[/div]]
+[[div class="lv-card-title"]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-108-n" target="_blank"]]"孤独のラウンジ"[[/a]]
+[[/div]]
+[[div class="lv-card-meta"]]
+[[span class="lv-card-author"]]Nuko_kami[[/span]]
+[[span class="lv-card-date"]]2026-06-18[[/span]]
+[[/div]]
+[[/div]]
+[[/div]]
+
+[[div class="lv-card"]]
 [[image https://japan-backrooms-storage.wdfiles.com/local--files/file:8643739-41-bxju/%E5%AE%87%E5%AE%99%E5%8A%87%E5%A0%B4 class="lv-card-img"]]
 [[div class="lv-card-body"]]
 [[div class="lv-card-level"]]
