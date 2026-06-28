@@ -1,5 +1,5 @@
 {
-  "total_levels": 344,
+  "total_levels": 343,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -439,21 +439,6 @@
       "created_at": "2025-05-31 14:39:54 UTC",
       "created_ts": 1748702394,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:8318462-16-nv90/1675689700153~2.png"
-    },
-    {
-      "level_num": 18,
-      "level_name": "Level 18 N",
-      "is_sub": false,
-      "parent_num": 18,
-      "sub_num": 0,
-      "slug": "level-18-n",
-      "url": "http://japan-backrooms-wiki.wikidot.com/level-18-n",
-      "title": "Level 18 N",
-      "subtitle": "\"一人きりで逃亡\"",
-      "author": "salt-A",
-      "created_at": "2025-09-22 17:31:13 UTC",
-      "created_ts": 1758562273,
-      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:8307275-3-9s1e/Cells_at_a_detention_center_or_prison_in_the_United_States.jpg"
     },
     {
       "level_num": 19,
