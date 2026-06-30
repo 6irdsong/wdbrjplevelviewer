@@ -3273,6 +3273,22 @@ Level 227
 [[/div]]
 
 [[div class="lv-card"]]
+[[image http://japan-backrooms-storage.wikidot.com/local--files/file:10386667-1-1muv/IMG_8519.jpeg class="lv-card-img"]]
+[[div class="lv-card-body"]]
+[[div class="lv-card-level"]]
+Level 231
+[[/div]]
+[[div class="lv-card-title"]]
+[[a href="http://japan-backrooms-wiki.wikidot.com/level-231-n" target="_blank"]]"駆け出しの憂鬱"[[/a]]
+[[/div]]
+[[div class="lv-card-meta"]]
+[[span class="lv-card-author"]]CRACKER_LOVER[[/span]]
+[[span class="lv-card-date"]]2026-06-30[[/span]]
+[[/div]]
+[[/div]]
+[[/div]]
+
+[[div class="lv-card"]]
 [[image http://japan-backrooms-storage.wikidot.com/local--files/file:9134046-9-7v51/share_1333199994115415943.jpeg class="lv-card-img"]]
 [[div class="lv-card-body"]]
 [[div class="lv-card-level"]]
