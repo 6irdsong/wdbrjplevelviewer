@@ -1,5 +1,5 @@
 {
-  "total_levels": 344,
+  "total_levels": 345,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -2089,6 +2089,21 @@
       "created_at": "2025-10-23 13:30:33 UTC",
       "created_ts": 1761226233,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:8609162-175-i7cv/cleanroom_04.webp"
+    },
+    {
+      "level_num": 115,
+      "level_name": "Level 115 N",
+      "is_sub": false,
+      "parent_num": 115,
+      "sub_num": 0,
+      "slug": "level-115-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-115-n",
+      "title": "Level 115 N",
+      "subtitle": "\"理郷の霧林\"",
+      "author": "fotona_syioui",
+      "created_at": "2026-07-05 07:05:09 UTC",
+      "created_ts": 1783235109,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:10267435-1-2tpp/Misty_Forest_-_geograph.org.uk_-_3877959.jpg"
     },
     {
       "level_num": 116,
