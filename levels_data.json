@@ -1,5 +1,5 @@
 {
-  "total_levels": 345,
+  "total_levels": 347,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -2451,6 +2451,21 @@
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:2577572-24-g15u/Level150N.jpg"
     },
     {
+      "level_num": 153,
+      "level_name": "Level 153 N",
+      "is_sub": false,
+      "parent_num": 153,
+      "sub_num": 0,
+      "slug": "level-153-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-153-n",
+      "title": "Level 153 N",
+      "subtitle": "\"第153館ホール\"",
+      "author": "anbrosia",
+      "created_at": "2026-07-07 13:00:08 UTC",
+      "created_ts": 1783429208,
+      "first_image": "https://japan-backrooms-storage.wdfiles.com/local--files/file:9014158-62-dcat/hall"
+    },
+    {
       "level_num": 154,
       "level_name": "Level 154 N",
       "is_sub": false,
@@ -4159,6 +4174,21 @@
       "created_at": "2023-05-29 11:36:26 UTC",
       "created_ts": 1685360186,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:3358370-28-mugd/irosirazu04"
+    },
+    {
+      "level_num": 577,
+      "level_name": "Level 577 N",
+      "is_sub": false,
+      "parent_num": 577,
+      "sub_num": 0,
+      "slug": "level-577-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-577-n",
+      "title": "Level 577 N",
+      "subtitle": "\"溺底小\"",
+      "author": "DocRone",
+      "created_at": "2026-07-07 12:32:55 UTC",
+      "created_ts": 1783427575,
+      "first_image": "https://japan-backrooms-storage.wdfiles.com/local--files/file:2663865-4-k1kv/1.png"
     },
     {
       "level_num": 599,
