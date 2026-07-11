@@ -1,5 +1,5 @@
 {
-  "total_levels": 347,
+  "total_levels": 348,
   "source_list_urls": [
     "http://japan-backrooms-wiki.wikidot.com/normal-levels-i",
     "http://japan-backrooms-wiki.wikidot.com/sub-levels"
@@ -2899,6 +2899,21 @@
       "created_at": "2025-10-18 11:00:02 UTC",
       "created_ts": 1760785202,
       "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:8318462-75-9or3/neon-3"
+    },
+    {
+      "level_num": 220,
+      "level_name": "Level 220 N",
+      "is_sub": false,
+      "parent_num": 220,
+      "sub_num": 0,
+      "slug": "level-220-n",
+      "url": "http://japan-backrooms-wiki.wikidot.com/level-220-n",
+      "title": "Level 220 N",
+      "subtitle": "\"長い夜にしようぜ\"",
+      "author": "Sepluv",
+      "created_at": "2026-07-11 11:19:14 UTC",
+      "created_ts": 1783768754,
+      "first_image": "http://japan-backrooms-storage.wikidot.com/local--files/file:10357277-6-thg3/Those%20days%27%20hotel.jpg"
     },
     {
       "level_num": 221,
